@@ -9,6 +9,13 @@ $(document).ready(function(){
     console.log("yay!");
 
 
+    // A tibit on what is NaN in JS
+    let a = 4;
+    let b = "not a number";
+
+    console.log("Is NaN will say that this is a number " +isNaN(b) + 
+    " however Number.isNaN is correct " + Number.isNaN(b));
+
     $('button').bind( 'click',
     function()
     {
