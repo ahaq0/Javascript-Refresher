@@ -6,9 +6,34 @@ $(document).ready(function(){
         console.log("all assets have loaded");
     })
 
-    console.log("yay!");
 
+    // Finding out where the this refers too has a lot to do with where it is called from.
+    // E.g. we share a function by implicit binding, without this name is undefined
 
+    function myName()
+    {
+        console.log(this.name, "is my name");
+    }
+
+    let personA = {
+        name : "mark",
+        myName : myName
+    }
+
+    
+    let personB = {
+        name : "semark",
+        myName : myName
+    }
+
+    personA.myName();
+    personB.myName();
+
+    if(typeof(personA) == typeof(null))
+    {
+        console.log("They're both objects in javascript thus this returns true");
+        // we need to check for null instead as it will override otherwise
+    }
     // A tibit on what is NaN in JS
     let a = 4;
     let b = "not a number";
